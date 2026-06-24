@@ -1,1 +1,2 @@
+language-pack-zh-hans
 fonts-wqy-microhei
