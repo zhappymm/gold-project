@@ -5,20 +5,21 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import matplotlib.pyplot as plt
-# 设置中文字体，兼容Windows/Mac/Linux服务器
-plt.rcParams['font.sans-serif'] = [
-    'Microsoft YaHei',
-    'PingFang SC',
-    'WenQuanYi Micro Hei',
-    'Noto Sans CJK SC',
-    'SimHei'
-]
-plt.rcParams['axes.unicode_minus'] = False
 import numpy as np
 
+# ------------------- 统一中文字体设置 -------------------
+# 优先使用 WenQuanYi Micro Hei（已通过 packages.txt 安装），其他作为备选
+plt.rcParams['font.sans-serif'] = [
+    'WenQuanYi Micro Hei',      # Linux 服务器专用（已安装）
+    'Microsoft YaHei',          # Windows
+    'PingFang SC',              # Mac
+    'Noto Sans CJK SC',         # Linux 备选
+    'SimHei'                    # 通用备选
+]
+plt.rcParams['axes.unicode_minus'] = False
+# ----------------------------------------------------
+
 st.set_page_config(page_title="黄金跨市场价差套利策略与定投收益分析系统", layout="wide")
-plt.rcParams["font.sans-serif"] = ["SimHei"]
-plt.rcParams["axes.unicode_minus"] = False
 
 # 自动计算项目内的正确路径
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
