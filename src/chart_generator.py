@@ -2,6 +2,15 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 import pandas as pd
 import matplotlib.pyplot as plt
+# 设置中文字体，兼容Windows/Mac/Linux服务器
+plt.rcParams['font.sans-serif'] = [
+    'Microsoft YaHei',
+    'PingFang SC',
+    'WenQuanYi Micro Hei',
+    'Noto Sans CJK SC',
+    'SimHei'
+]
+plt.rcParams['axes.unicode_minus'] = False
 import sqlite3
 import os
 

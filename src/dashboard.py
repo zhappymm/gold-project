@@ -5,6 +5,15 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import matplotlib.pyplot as plt
+# 设置中文字体，兼容Windows/Mac/Linux服务器
+plt.rcParams['font.sans-serif'] = [
+    'Microsoft YaHei',
+    'PingFang SC',
+    'WenQuanYi Micro Hei',
+    'Noto Sans CJK SC',
+    'SimHei'
+]
+plt.rcParams['axes.unicode_minus'] = False
 import numpy as np
 
 st.set_page_config(page_title="黄金跨市场价差套利策略与定投收益分析系统", layout="wide")
